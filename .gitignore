@@ -1,0 +1,6 @@
+socketioupload/node_modules/
+socketioupload/app/node_modules/
+socketioupload/app/uploads/
+socketioupload/test/serve/bundle.js
+.idea
+uploads/

@@ -1,0 +1,20 @@
+web:
+    build: socketioupload
+    volumes:
+        - /Users/Edumar/OSCE/2017/UPLOAD/fuentes/uploadnode/uploads:/uploads
+    links:
+        - redis
+    expose:
+        - "4567"
+redis:
+    image: redis
+lb:
+    image: tutum/haproxy
+    links:
+        - web
+    ports:
+        - "800:80"
+    environment:
+        - BACKEND_PORT=4567
+        - BALANCE=roundrobin
+
